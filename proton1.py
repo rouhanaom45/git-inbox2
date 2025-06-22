@@ -137,7 +137,7 @@ if random.random() < 0.2:
     time.sleep(random.uniform(0.15, 0.5))
 pyautogui.click()
 time.sleep(1)
-random_human_typing("https://account.proton.me/mail/signup?plan=free&ref=mail_plus_intro-mailpricing-2")
+pyautogui.write('https://account.proton.me/mail/signup?plan=free&ref=mail_plus_intro-mailpricing-2')
 time.sleep(0.5)
 pyautogui.press("enter")
 time.sleep(12)
