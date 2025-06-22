@@ -15,7 +15,6 @@ scripts=(
   "confirm.py"
   "repository.py"
   "upload.py"
-  "chrome-upload.py"
 )
 
 # Run each script in order
