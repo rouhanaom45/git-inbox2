@@ -51,11 +51,25 @@ def smooth_mouse_move(target_x, target_y, duration=0.5):
         pyautogui.moveTo(target_x, target_y, duration=0.15)
 
 def random_click_in_rectangle(top_left, bottom_right):
-    """Click within a rectangle with human-like movement and hesitation."""
+    """Click within a rectangle with human-like movement and size-adjusted offset."""
     x = random.randint(top_left[0], bottom_right[0])
     y = random.randint(top_left[1], bottom_right[1])
-    x += random.randint(-8, 8)  # Slight offset
-    y += random.randint(-8, 8)
+    # Calculate rectangle dimensions
+    width = bottom_right[0] - top_left[0]
+    height = bottom_right[1] - top_left[1]
+    # Scale offset based on rectangle size; no offset for very small rectangles
+    if width < 10 or height < 10:
+        offset_x = 0
+        offset_y = 0
+    else:
+        max_offset = min(width, height) * 0.1  # Cap offset at 10% of smaller dimension
+        offset_x = random.randint(-int(max_offset), int(max_offset))
+        offset_y = random.randint(-int(max_offset), int(max_offset))
+    x += offset_x
+    y += offset_y
+    # Ensure click stays within rectangle bounds
+    x = max(top_left[0], min(x, bottom_right[0]))
+    y = max(top_left[1], min(y, bottom_right[1]))
     smooth_mouse_move(x, y, duration=random.uniform(0.4, 0.8))
     
     # Pre-click hesitation
@@ -224,7 +238,7 @@ for _ in range(4):
 
 time.sleep(0.7)
 
-# Step 11: Final click and wait Robin Hood wait
+# Step 11: Final click and wait
 random_click_in_rectangle((818, 456), (1228, 477))
 random_sleep(3.5, 4.5)
 random_click_in_rectangle((1273, 203), (1342, 408))
