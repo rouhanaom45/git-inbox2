@@ -34,7 +34,7 @@ for attempt in range(max_attempts):
 
     print("No buttons detected in this attempt. Pressing Down Arrow key to continue...")
     time.sleep(1)
-    pyautogui.click(96, 63)
+    pyautogui.click(96, 83)
     time.sleep(7)
     subprocess.run(["python3", "replay.py"])
     time.sleep(1)
