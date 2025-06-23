@@ -140,7 +140,9 @@ time.sleep(1)
 pyautogui.write('https://account.proton.me/mail/signup?mode=sps&ref=mailhero')
 time.sleep(0.5)
 pyautogui.press("enter")
-time.sleep(12)
+time.sleep(8)
+pyautogui.click(96, 83)
+time.sleep(7)
 
 # Random click within one of two areas
 if random.choice([True, False]):
