@@ -137,37 +137,45 @@ if random.random() < 0.2:
     time.sleep(random.uniform(0.15, 0.5))
 pyautogui.click()
 time.sleep(1)
-pyautogui.write('https://account.proton.me/mail/signup?plan=free&ref=mail_plus_intro-mailpricing-2')
+pyautogui.write('https://account.proton.me/mail/signup?mode=sps&ref=mailhero')
 time.sleep(0.5)
 pyautogui.press("enter")
 time.sleep(12)
 
 # Random click within one of two areas
 if random.choice([True, False]):
-    random_click_within_rect((30, 322), (163, 558))
+    random_click_within_rect((44, 266), (180, 450))
 else:
-    random_click_within_rect((1173, 279), (1296, 556))
+    random_click_within_rect((1142, 255), (1323, 471))
 
 random_wait(1, 2)
-press_count = random.randint(10, 12)
+press_count = random.randint(5, 6)
 
 for i in range(press_count):
     pyautogui.press('down')
     time.sleep(random.uniform(0.3, 0.4))
 
 random_wait(1, 2)
-random_click_within_rect((255, 160), (587, 166))
+random_click_within_rect((124, 512), (347, 600))
 random_wait(0.5, 1.2)
+press_count = random.randint(16, 17)
 
+for i in range(press_count):
+    pyautogui.press('down')
+    time.sleep(random.uniform(0.3, 0.4))
+
+random_wait(1, 2)
+random_click_within_rect((124, 159), (596, 164))
+random_wait(0.5, 1.2)
 # Write a random name
 random_human_typing(generate_random_name())
 random_wait(0.8, 1.4)
 
-random_click_within_rect((615, 159), (689, 169))
+random_click_within_rect((661, 159), (756, 167))
 random_wait(1, 1.5)
-random_click_within_rect((625, 199), (724, 238))
+random_click_within_rect((670, 200), (770, 238))
 random_wait(0.8, 1.4)
-random_click_within_rect((252, 244), (574, 255))
+random_click_within_rect((118, 244), (650, 251))
 random_wait(0.5, 1)
 
 # Write a random password
@@ -175,19 +183,13 @@ password = generate_random_password()
 random_human_typing(password, is_password=True)
 random_wait(1, 2)
 
-random_click_within_rect((35, 286), (140, 461))
-random_wait(1, 2)
-for _ in range(random.randint(5, 6)):
-    pyautogui.press("down")
-    time.sleep(random.uniform(0.1, 0.3))
-
-random_click_within_rect((247, 271), (589, 280))
+random_click_within_rect((114, 288), (528, 295))
 random_wait(1, 2)
 # Rewrite the same password
 random_human_typing(password, is_password=True)
 time.sleep(1)
 
-random_click_within_rect((395, 327), (586, 339))
+random_click_within_rect((356, 346), (526, 361))
 random_wait(5, 6.5)
 smooth_mouse_move(648, 293, duration=random.uniform(0.4, 0.8))
 if random.random() < 0.2:
