@@ -113,30 +113,30 @@ def generate_random_password():
 
 # Random click within one of two areas
 if random.choice([True, False]):
-    random_click_within_rect((37, 306), (112, 416))
+    random_click_within_rect((30, 322), (163, 558))
 else:
-    random_click_within_rect((1211, 393), (1312, 521))
+    random_click_within_rect((1173, 279), (1296, 556))
 
 random_wait(1, 2)
-press_count = random.randint(14, 15)
+press_count = random.randint(10, 12)
 
 for i in range(press_count):
     pyautogui.press('down')
-    time.sleep(random.uniform(0.15, 0.35))  # Varied scrolling speed
+    time.sleep(random.uniform(0.3, 0.4))
 
 random_wait(1, 2)
-random_click_within_rect((238, 151), (569, 161))
-random_wait(0.7, 1.2)
+random_click_within_rect((255, 160), (587, 166))
+random_wait(0.5, 1.2)
 
 # Write a random name
 random_human_typing(generate_random_name())
-random_wait(1.2, 1.6)
-
-random_click_within_rect((641, 156), (720, 162))
-random_wait(1, 1.5)
-random_click_within_rect((615, 193), (720, 234))
 random_wait(0.8, 1.4)
-random_click_within_rect((237, 241), (654, 250))
+
+random_click_within_rect((615, 159), (689, 169))
+random_wait(1, 1.5)
+random_click_within_rect((625, 199), (724, 238))
+random_wait(0.8, 1.4)
+random_click_within_rect((252, 244), (574, 255))
 random_wait(0.5, 1)
 
 # Write a random password
@@ -144,19 +144,24 @@ password = generate_random_password()
 random_human_typing(password, is_password=True)
 random_wait(1, 2)
 
-random_click_within_rect((57, 178), (149, 460))
+random_click_within_rect((35, 286), (140, 461))
 random_wait(1, 2)
-for _ in range(random.randint(2, 3)):
+for _ in range(random.randint(5, 6)):
     pyautogui.press("down")
-    time.sleep(random.uniform(0.1, 0.35))  # Varied scrolling speed
+    time.sleep(random.uniform(0.1, 0.3))
 
-random_click_within_rect((243, 271), (662, 278))
+random_click_within_rect((247, 271), (589, 280))
 random_wait(1, 2)
 # Rewrite the same password
 random_human_typing(password, is_password=True)
 time.sleep(1)
 
-random_click_within_rect((383, 326), (568, 340))
-random_wait(6, 7)
-random_click_within_rect((859, 147), (868, 154))
+random_click_within_rect((395, 327), (586, 339))
+random_wait(5, 6.5)
+smooth_mouse_move(648, 293, duration=random.uniform(0.4, 0.8))
+if random.random() < 0.2:
+    time.sleep(random.uniform(0.15, 0.5))
+pyautogui.click()
+time.sleep(1)
+random_click_within_rect((862, 211), (868, 219))
 random_wait(5, 5.6)
