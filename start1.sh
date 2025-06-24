@@ -4,7 +4,6 @@
 scripts=(
   "get-profile.py"
   "profile-txt.py"
-  "open-profile.sh"
   "proton-ready.py"
   "save.py"
   "github1.py"
