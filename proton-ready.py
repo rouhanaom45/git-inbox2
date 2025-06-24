@@ -6,6 +6,8 @@ import string
 import sys
 
 time.sleep(1.5)
+subprocess.run(["bash", "open-profile.sh"], check=True)
+time.sleep(2)
 
 def random_wait(min_time, max_time):
     """Sleep for a random time with human-like variability."""
