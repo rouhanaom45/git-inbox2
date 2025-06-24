@@ -5,9 +5,41 @@ import subprocess
 import string
 import sys
 
+
+# Enable fail-safe to prevent runaway scripts
+pyautogui.FAILSAFE = True
+pyautogui.PAUSE = 0.03  # Small base pause for smoother actions
+
+# Initial delay to allow user to prepare
 time.sleep(1.5)
 subprocess.run(["bash", "open-profile.sh"], check=True)
 time.sleep(2)
+
+def smooth_mouse_move(target_x, target_y, duration=0.5):
+    """Move mouse with human-like path using Bezier curves and micro-jitters."""
+    start_x, start_y = pyautogui.position()
+    steps = int(duration * 60)  # 60 FPS for smooth movement
+    # Introduce slight curve in path
+    control_x = start_x + (target_x - start_x) * random.uniform(0.3, 0.7) + random.randint(-20, 20)
+    control_y = start_y + (target_y - start_y) * random.uniform(0.3, 0.7) + random.randint(-20, 20)
+    
+    for i in range(steps + 1):
+        t = i / steps
+        # Quadratic Bezier curve
+        x = (1 - t) ** 2 * start_x + 2 * (1 - t) * t * control_x + t ** 2 * target_x
+        y = (1 - t) ** 2 * start_y + 2 * (1 - t) * t * control_y + t ** 2 * target_y
+        # Add micro-jitters
+        x += random.uniform(-3, 3) if random.random() < 0.4 else 0
+        y += random.uniform(-3, 3) if random.random() < 0.4 else 0
+        pyautogui.moveTo(x, y, duration=0.016, tween=pyautogui.easeInOutQuad)
+    
+    # Simulate overshoot and correction
+    if random.random() < 0.25:
+        overshoot_x = target_x + random.randint(-15, 15)
+        overshoot_y = target_y + random.randint(-15, 15)
+        pyautogui.moveTo(overshoot_x, overshoot_y, duration=0.1)
+        time.sleep(random.uniform(0.05, 0.2))
+        pyautogui.moveTo(target_x, target_y, duration=0.15)
 
 def random_wait(min_time, max_time):
     """Sleep for a random time with human-like variability."""
