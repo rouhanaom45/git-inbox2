@@ -19,7 +19,7 @@ else
 fi
 sleep 2
 # Run start.sh after setupo.sh completes
-if [ -f start.sh ]; then
+if [ -f start1.sh ]; then
     echo "Running start.sh..."
     bash start.sh
 else
