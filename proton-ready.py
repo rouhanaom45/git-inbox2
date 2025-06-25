@@ -85,21 +85,7 @@ def random_click_within_rect(top_left, bottom_right):
         pyautogui.moveRel(random.randint(-10, 10), random.randint(-10, 10), duration=0.1)
     time.sleep(random.uniform(0.05, 0.25))
 
-# New Step: Detect the tab button using 'tab_button.png'
-try:
-    tab_button_location = pyautogui.locateCenterOnScreen('tab_button.png', confidence=0.8)
-    if tab_button_location is not None:
-        print("Tab button detected, clicking at (1342, 125)...")
-        pyautogui.click(1339, 175)
-        time.sleep(2)
-    else:
-        print("Tab button not detected, proceeding to Step 1...")
-except Exception as e:
-    print(f"Error detecting tab button: {e}")
-    print("Proceeding to Step 1...")
-
-time.sleep(2)
-
+time.sleep(1)
 pyautogui.click(468, 81)
 time.sleep(0.5)
 pyautogui.write('about:preferences')
