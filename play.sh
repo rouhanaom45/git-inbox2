@@ -21,7 +21,7 @@ sleep 2
 # Run start.sh after setupo.sh completes
 if [ -f start1.sh ]; then
     echo "Running start.sh..."
-    bash start.sh
+    bash start1.sh
 else
     echo "Error: start.sh not found."
     exit 1
