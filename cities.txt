@@ -18,19 +18,19 @@ Phoenix
 Salt Lake City
 San Francisco
 Seattle
-St. Louis
+Saint Louis
 Buenos Aires
 Nassau
 Belmopan
 Hamilton
 La Paz
-São Paulo
+Sao Paulo
 Montreal
 Toronto
 Vancouver
 Santiago
-Bogotá
-San José
+Bogota
+San Jose
 Santo Domingo
 Quito
 San Salvador
@@ -38,7 +38,7 @@ Nuuk
 Guatemala City
 Hagatna
 Panama City
-Asunción
+Asuncion
 Lima
 San Juan
 Port of Spain
