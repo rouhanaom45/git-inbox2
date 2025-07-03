@@ -42,15 +42,15 @@ def perform_actions():
 
     # Click at (749, 600)
     pyautogui.click(720, 539)
-    time.sleep(4)
+    time.sleep(6)
 
     # Click at (1277, 484)
     pyautogui.click(1280, 326)
-    time.sleep(2)
+    time.sleep(4)
 
     # Click at (1314, 372)
     pyautogui.click(1316, 229)
-    time.sleep(2)
+    time.sleep(4)
 
     # Click at (1312, 218)
     pyautogui.click(1307, 86)
@@ -62,7 +62,7 @@ def perform_actions():
 
     # Click at (1010, 382)
     pyautogui.click(1013, 243)
-    time.sleep(1)
+    time.sleep(2.5)
 
     # Click at (1305, 218)
     pyautogui.click(1306, 83)
