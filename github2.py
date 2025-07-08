@@ -10,7 +10,7 @@ button_images = [
     'confirm0_button.png'
 ]
 
-max_attempts = 15
+max_attempts = 20
 
 for image in button_images:
     if not os.path.isfile(image):
@@ -53,6 +53,7 @@ print("Maximum detection attempts reached. Exiting...")
 time.sleep(0.7)
 pyautogui.hotkey('ctrl', 'w')
 time.sleep(0.7)
-pyautogui.hotkey('ctrl', 'w')
-time.sleep(0.7)
-sys.exit(1)  # Failure: max attempts reached, signal to retry
+subprocess.run(["python3", "save.py"])
+time.sleep(1)
+subprocess.run(["python3", "github1.py"])
+time.sleep(1)
